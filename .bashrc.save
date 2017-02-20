@@ -1,0 +1,87 @@
+##Bash Formatting
+
+##Path
+export PATH=/Users/trainmanlied/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/local/Cellar/ruby/1.9.3-p327/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+## TextMate
+export EDITOR="$HOME/bin/mate -w"
+export PATH="$HOME/bin:$PATH" 
+
+##Command Line Prompt Mode
+PS1="\[\033[1;30m\][\[\033[1;34m\]\u\[\033[1;30m\]@\[\033[0;35m\]\h\[\033[1;30m\]] \[\033[0;37m\]\W \[\033[1;30m\]\$\[\033[0m\] "
+
+##Colors
+##Dark Terminal
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+##Light Terminal
+##export CLICOLORS=1
+##export LSCOLORS=ExFxBxDxCxegedabagacad
+
+##Grep Color
+export grep='grep --color=auto'
+export GREP_OPTIONS='--color=auto'
+export egrep='egrep --color=auto'
+export fgrep='fgrep --color=auto'
+
+
+##Alias Section
+#Add Color, All Files, Add Slash After Directories
+alias l="ls -aGp"
+alias ll="ls -alGp"
+
+alias cp="cp -iv"      # interactive, verbose
+alias rm="rm -iv"      # interactive
+alias mv="mv -iv"       # interactive, verbose
+alias grep="grep -i"  # ignore case
+
+## Use Colordiff for diff
+alias diff='colordiff'
+
+##Time Commands
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+
+##Ping with color
+# Stop after sending count ECHO_REQUEST packets #
+alias ping='ping -c 5'
+# Do not wait interval 1 second, go fast #
+alias fastping='ping -c 100 -s.2'
+
+## Show Open Ports
+alias ports='netstat -tulanp'
+
+# reboot / halt / poweroff
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
+alias halt='sudo /sbin/halt'
+alias shutdown='sudo /sbin/shutdown'
+
+## History
+export HISTSIZE=100000			# 500 is default
+export HISTFILESIZE=1000000
+export HISTTIMEFORMAT='%b %d %I:%M %p'	# using strftime format
+export HISTCONTROL=ignoreboth		# ignoredups:ignorespace
+export HISTIGNORE="history:pwd:exit:ls:ll:l"
+
+##Say Commands
+say -v Bruce  "It's Unix Bitches!! "
+
+## FROM KEVIN SKOGLUND
+MYNAME="Sugar Bear"
+export MYNAME
+
+echo ""
+echo -n "Welcome to Unix on Mac OS X, "; whoami
+echo ""
+echo -n "Today is "; date "+%m-%d-%Y %H:%M:%S"
+echo ""
+cal
+echo -n "Uptime: "; uptime
+echo "" 
